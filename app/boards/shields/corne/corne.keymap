@@ -10,52 +10,52 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
+    // combos {
+    //     compatible = "zmk,combos";
 
-        Both {
-            bindings = <&fix 0 3>;
-            key-positions = <37 40>;
-        };
+    //     Both {
+    //         bindings = <&fix 0 3>;
+    //         key-positions = <37 40>;
+    //     };
 
-        Alt {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <40 41>;
-        };
-    };
+    //     Alt {
+    //         bindings = <&kp LEFT_ALT>;
+    //         key-positions = <40 41>;
+    //     };
+    // };
 
-    behaviors {
-        Raise: Raise {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RAISE";
-            bindings = <&mo>, <&to>;
+    // behaviors {
+    //     Raise: Raise {
+    //         compatible = "zmk,behavior-hold-tap";
+    //         label = "RAISE";
+    //         bindings = <&mo>, <&to>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-        };
+    //         #binding-cells = <2>;
+    //         tapping-term-ms = <200>;
+    //         hold-while-undecided;
+    //     };
 
-        Lower: Lower {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LOWER";
-            bindings = <&mo>, <&to>;
+    //     Lower: Lower {
+    //         compatible = "zmk,behavior-hold-tap";
+    //         label = "LOWER";
+    //         bindings = <&mo>, <&to>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            hold-while-undecided;
-        };
+    //         #binding-cells = <2>;
+    //         tapping-term-ms = <200>;
+    //         flavor = "balanced";
+    //         hold-while-undecided;
+    //     };
 
-        fix: fix {
-            compatible = "zmk,behavior-hold-tap";
-            label = "FIX";
-            bindings = <&to>, <&to>;
+    //     fix: fix {
+    //         compatible = "zmk,behavior-hold-tap";
+    //         label = "FIX";
+    //         bindings = <&to>, <&to>;
 
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-    };
+    //         #binding-cells = <2>;
+    //         tapping-term-ms = <200>;
+    //         flavor = "balanced";
+    //     };
+    // };
 
     keymap {
         compatible = "zmk,keymap";
@@ -71,7 +71,7 @@
 &kp ESC    &kp Q  &kp W  &kp E      &kp R       &kp T        &kp Y    &kp U       &kp I         &kp O    &kp P     &kp BSPC
 &kp TAB    &kp A  &kp S  &kp D      &kp F       &kp G        &kp H    &kp J       &kp K         &kp L    &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z  &kp X  &kp C      &kp V       &kp B        &kp N    &kp M       &kp COMMA     &kp DOT  &kp FSLH  &kp DEL
-                         &kp LCTRL  &Lower 1 1  &kp SPACE    &kp RET  &Raise 2 2  &kp LEFT_GUI
+                         &kp LCTRL  &to 1       &kp SPACE    &kp RET  &to 2       &kp LEFT_GUI
             >;
         };
 
@@ -86,7 +86,7 @@
 &kp ESCAPE  &kp N1           &kp N2           &kp N3           &kp N4           &kp N5             &kp N6   &kp N7      &kp N8  &kp N9  &kp N0  &kp BSPC
 &bt BT_CLR  &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &trans   &kp N4      &kp N5  &kp N6  &trans  &trans
 &kp LSHFT   &rgb_ug RGB_TOG  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD    &trans   &kp N1      &kp N2  &kp N3  &trans  &trans
-                                              &kp LCTRL        &to 0            &kp SPACE          &kp RET  &Raise 2 2  &kp N0
+                                              &kp LCTRL        &to 0            &kp SPACE          &kp RET  &to 0       &kp N0
             >;
         };
 
@@ -101,7 +101,7 @@
 &kp ESC    &kp EXCL  &kp AT      &kp HASH   &kp DLLR    &kp PRCNT       &kp CARET  &kp AMPS  &kp UP            &kp LPAR           &kp RPAR      &kp BSPC
 &kp TAB    &trans    &trans      &trans     &kp C_MUTE  &kp C_VOL_UP    &kp MINUS  &kp LEFT  &kp DOWN          &kp RIGHT          &kp ASTERISK  &kp GRAVE
 &kp LSHFT  &trans    &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_VOL_DN    &kp EQUAL  &kp PLUS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SLASH     &kp BSLH
-                                 &kp LCTRL  &Lower 1 1  &kp SPACE       &kp RET    &to 0     &kp LEFT_GUI
+                                 &kp LCTRL  &to 0       &kp SPACE       &kp RET    &to 0     &kp LEFT_GUI
             >;
         };
 
